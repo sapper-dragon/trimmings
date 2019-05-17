@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+require = require('esm')(module)
+module.exports = require('./src/cli.js')
+
+// TODO: break this thing up under `@sapper-dragon/*` plugins or `@svelte-dragons/*`
+// pwa: https://github.com/lukeed/pwa/blob/master/packages/core/index.js#L22-L31
+// much older, shitier example: https://github.com/lukeed/taskr/blob/82d0bef537c598d32ef425af7eef7cee3cf59a5f/packages/taskr/lib/plugins.js#L95
