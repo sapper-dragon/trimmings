@@ -13,6 +13,7 @@ prog
 	.option('-p, --postcss', 'Use PostCSS for preprocessing', false)
 	.option('-s, --svgo', 'Use SVGO compiler for svgs', false)
 	.option('-r, --remark', 'Use Remark compiler for markdown', false)
+	.option('-l, --lilypond', 'Use LilyPond compiler for sheet music', false)
 	.action(async(opts) => {
 
 		console.log()

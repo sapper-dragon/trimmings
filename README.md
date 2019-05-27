@@ -8,7 +8,7 @@ This package is a grab bag of useful "plugins" for Sapper. These tools are all e
  * [@sapper-dragon/postcss](https://github.com/sapper-dragon/postcss) (PostCSS/CSS)
  * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVGO/SVG)
  * [@sapper-dragon/remark](https://github.com/sapper-dragon/remark) (Remark/Markdown)
- <!-- * [LilyPond](http://lilypond.org/) (Sheet Music) -->
+ * [@sapper-dragon/lilypond](http://lilypond.org/) (LilyPond/Sheet Music)
  <!-- * [JSON ... to come] -->
 
 > NOTE: this lib *only* works with Svelte v3, Sapper 0.26.0+, and Rollup. _You've been warned_. 🐉
@@ -34,6 +34,7 @@ trim watch [options]
 -p, --postcss     Use PostCSS for preprocessing  (default false)
 -s, --svg         Use SVG compiler  (default false)
 -m, --markdown    Use markdown compiler  (default false)
+-l, --lilypond    Use LilyPond compiler  (default false)
 ```
 
 ### package.json script
@@ -41,7 +42,7 @@ trim watch [options]
 I'm using an NPM/Yarn `package.json` script like so (including any desired options):
 
 ```json
-"watch": "trim watch --svg --postcss --markdown"
+"watch": "trim watch --svg --postcss --markdown --lilypond"
 ```
 
 ### Config

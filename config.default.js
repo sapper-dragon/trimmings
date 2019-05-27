@@ -21,4 +21,10 @@ module.exports.config = {
 		sveltePath: 'src/routes/_markdown',
 	},
 
+	lilypond: {
+		watchPath: 'src/trimmings/lilypond',
+		pathMatcher: /\.ly$/,
+		staticPath: 'static/music',
+	},
+
 }
