@@ -1,30 +1,30 @@
 module.exports.config = {
 
 	postcss: {
-		watchPath: 'src/trimmings/postcss',
+		import: 'src/trimmings/postcss',
 		filename: 'global',
-		pathMatcher: /\.(postcss|css|scss)$/,
-		staticPath: 'static/css',
+		filter: /\.(postcss|css|scss)$/,
+		exportStatic: 'static/css',
 		preImport: 'svelte-pre-imports',
 	},
 
 	svgo: {
-		watchPath: 'src/trimmings/svgo',
-		pathMatcher: /\.(svg)$/,
-		sveltePath: 'src/routes/_svg',
-		staticPath: 'static/svg',
+		import: 'src/trimmings/svgo',
+		filter: /\.(svg)$/,
+		exportSvelte: 'src/routes/_svg',
+		exportStatic: 'static/svg',
 	},
 
 	remark: {
-		watchPath: 'src/trimmings/remark',
-		pathMatcher: /\.md$/,
-		sveltePath: 'src/routes/_markdown',
+		import: 'src/trimmings/remark',
+		filter: /\.md$/,
+		exportSvelte: 'src/routes/_markdown',
 	},
 
 	lilypond: {
-		watchPath: 'src/trimmings/lilypond',
-		pathMatcher: /\.ly$/,
-		staticPath: 'static/music',
+		import: 'src/trimmings/lilypond',
+		filter: /\.ly$/,
+		exportStatic: 'static/music',
 	},
 
 }

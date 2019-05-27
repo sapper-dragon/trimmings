@@ -6,7 +6,7 @@ import * as pkg from './package.json'
 import { setWatch } from './watcher'
 
 const prog = sade('trim').version(pkg.version)
-const potentialSettings = ['watchPath', 'sveltePath', 'staticPath']
+const potentialSettings = ['import', 'exportSvelte', 'exportStatic']
 
 prog
 	.command('watch')

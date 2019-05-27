@@ -7,13 +7,13 @@ export const setWatch = async(name, config, internal) => {
 	const { change, remove } = await require(`../${name}`)
 
 	const watch = new CheapWatch({
-		dir: path.join(process.cwd(), `/${config[name].watchPath}`),
+		dir: path.join(process.cwd(), `/${config[name].import}`),
 		filter: ({ path, stats }) => {
 			const match =
 				path.indexOf('.git') !== 0 &&
 				path.indexOf('node_modules') !== 0 &&
 				// path.indexOf('_') !== 0 &&
-				(!!path.match(config[name].pathMatcher) || stats.isDirectory())
+				(!!path.match(config[name].filter) || stats.isDirectory())
 			return match
 		},
 		debounce: 100,
