@@ -6,6 +6,7 @@ import * as pkg from './package.json'
 import { setWatch } from './watcher'
 
 const prog = sade('trim').version(pkg.version)
+const potentialSettings = ['watchPath', 'sveltePath', 'staticPath']
 
 prog
 	.command('watch')
@@ -22,23 +23,20 @@ prog
 		// console.log(config)
 
 		try {
-			if (opts.postcss) {
-				console.log('~>', green('Watching Sapper trimming:'), 'postcss')
-				await exec(`mkdir -p ${config.postcss.watchPath}`)
-				setWatch('postcss', config)
-			}
-			if (opts.svgo) {
-				console.log('~>', green('Watching Sapper trimming:'), 'svgo')
-				await exec(`mkdir -p ${config.svgo.watchPath}`)
-				await exec(`mkdir -p ${config.svgo.sveltePath}`)
-				await exec(`mkdir -p ${config.svgo.staticPath}`)
-				setWatch('svgo', config)
-			}
-			if (opts.remark) {
-				console.log('~>', green('Watching Sapper trimming:'), 'remark')
-				await exec(`mkdir -p ${config.remark.watchPath}`)
-				await exec(`mkdir -p ${config.remark.sveltePath}`)
-				setWatch('remark', config)
+			// here we:
+			for (let name in opts) {
+				// 1. check if the named option is set (i.e., postcss, svgo, etc.)
+				if (name.length > 1 && opts[name]) {
+					console.log('~>', green('Watching Sapper trimming:'), name)
+					for (let potentialDir in config[name]) {
+						// 2. check if `mkdir` needs to be employed (for different dirs)
+						if (potentialSettings.indexOf(potentialDir) > -1) {
+							// 3. if so, do it...
+							await exec(`mkdir -p ${config[name][potentialDir]}`)
+						}
+					}
+					setWatch(name, config)
+				}
 			}
 		} catch (err) {
 			console.log(red(`> ${err.message}`))
