@@ -3,8 +3,8 @@
 Decorate your [Sapper](https://sapper.svelte.dev/) project with some (semi-optional) holiday spirit.
 
  * [PostCSS](https://postcss.org/) (CSS)
- * [sapper-svgo](https://github.com/sapper-dragon/svgo) (SVG preparation for Sapper)
- * [Remark](https://remark.js.org/) (Markdown)
+ * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVG)
+ * [@sapper-dragon/remark](https://github.com/sapper-dragon/remark) (Markdown)
  <!-- * [LilyPond](http://lilypond.org/) (Sheet Music) -->
  * [JSON ... to come]
 
@@ -51,7 +51,6 @@ You can place a `trimmings.config.js` file in the root of your project to set co
 
 ```js
 export default {
-
 	postcss: {
 		watchPath: 'src/trimmings/postcss', // path to watch *.postcss files:
 		filename: 'global', // name of file without extension
@@ -59,16 +58,9 @@ export default {
 		staticPath: 'static/css', // output path:
 		preImport: 'svelte-pre-imports', // filename without extension for pre-importing postcss vars and mixins
 	},
-
 	svgo: {/* ...see @sapper-dragon/svgo package... */},
-
-	remark: {
-		watchPath: 'src/trimmings/remark', // path to watch *.md files:
-		pathMatcher: /\.md$/, // pattern for files to watch:
-		sveltePath: 'src/routes/_markdown', // svelte output path:
-	},
+	remark: {/* ...see @sapper-dragon/remark package... */},
 	// etc.
-
 }
 ```
 

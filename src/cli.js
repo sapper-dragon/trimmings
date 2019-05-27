@@ -37,7 +37,7 @@ prog
 				console.log('~>', green('Watching Sapper trimming:'), 'remark')
 				await exec(`mkdir -p ${config.remark.watchPath}`)
 				await exec(`mkdir -p ${config.remark.sveltePath}`)
-				setWatch('remark', config, true)
+				setWatch('remark', config)
 			}
 		} catch (err) {
 			console.log(red(`> ${err.message}`))

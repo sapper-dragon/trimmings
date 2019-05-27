@@ -45,8 +45,6 @@
     "postcss-scss": "2.0.0",
     "postcss-simple-vars": "5.0.2",
     "postcss-strip-inline-comments": "0.1.5",
-    "remark": "10.0.1",
-    "remark-html": "9.0.0",
     "sade": "1.4.2",
     "tinycolor2": "1.4.1"
   },
