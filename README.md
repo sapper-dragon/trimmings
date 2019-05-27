@@ -47,7 +47,7 @@ I'm using an NPM/Yarn `package.json` script like so (including any desired optio
 
 ### Config
 
-You can place a `trimmings.config.js` file in the root of your project to set configutations. These are the defaults:
+You can place a `trimmings.config.js` file in the root of your project to set configutations. Individual configurations can be found in each `@sapper-dragon/*` packages, but the basic format is like this:
 
 ```js
 export default {
@@ -60,18 +60,14 @@ export default {
 		preImport: 'svelte-pre-imports', // filename without extension for pre-importing postcss vars and mixins
 	},
 
-	svgo: {
-		watchPath: 'src/trimmings/svgo', // path to watch *.svg files:
-		pathMatcher: /\.(svg)$/, // pattern for files to watch:
-		sveltePath: 'src/routes/_svg', // svelte output path:
-		staticPath: 'static/svg', // static output path:
-	},
+	svgo: {/* ...see @sapper-dragon/svgo package... */},
 
 	remark: {
 		watchPath: 'src/trimmings/remark', // path to watch *.md files:
 		pathMatcher: /\.md$/, // pattern for files to watch:
 		sveltePath: 'src/routes/_markdown', // svelte output path:
 	},
+	// etc.
 
 }
 ```

@@ -48,7 +48,6 @@
     "remark": "10.0.1",
     "remark-html": "9.0.0",
     "sade": "1.4.2",
-    "svgo": "1.2.2",
     "tinycolor2": "1.4.1"
   },
   "devDependencies": {}

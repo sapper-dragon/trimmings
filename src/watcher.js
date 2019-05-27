@@ -2,9 +2,13 @@ import path from 'path'
 import CheapWatch from 'cheap-watch'
 import { yellow, red } from 'ansi-colors'
 
-export const setWatch = async(name, config) => {
+export const setWatch = async(name, config, internal) => {
+	// TODO: remove when postcss and remark are finished
+	internal = internal || false
 
-	const { change, remove } = await require(`./watchers/watcher-${name}`)
+	const { change, remove } = internal
+		? await require(`./watchers/watcher-${name}`)
+		: await require(`../../${name}`) // TODO: how fragile is this?
 
 	const watch = new CheapWatch({
 		dir: path.join(process.cwd(), `/${config[name].watchPath}`),

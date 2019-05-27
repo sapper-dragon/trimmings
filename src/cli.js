@@ -24,7 +24,7 @@ prog
 			if (opts.postcss) {
 				console.log('~>', green('Watching Sapper trimming:'), 'postcss')
 				await exec(`mkdir -p ${config.postcss.watchPath}`)
-				setWatch('postcss', config)
+				setWatch('postcss', config, true)
 			}
 			if (opts.svgo) {
 				console.log('~>', green('Watching Sapper trimming:'), 'svgo')
@@ -37,7 +37,7 @@ prog
 				console.log('~>', green('Watching Sapper trimming:'), 'remark')
 				await exec(`mkdir -p ${config.remark.watchPath}`)
 				await exec(`mkdir -p ${config.remark.sveltePath}`)
-				setWatch('remark', config)
+				setWatch('remark', config, true)
 			}
 		} catch (err) {
 			console.log(red(`> ${err.message}`))
