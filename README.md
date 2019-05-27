@@ -2,17 +2,16 @@
 
 Decorate your [Sapper](https://sapper.svelte.dev/) project with some (semi-optional) holiday spirit.
 
- * [PostCSS](https://postcss.org/) (CSS)
- * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVG)
- * [@sapper-dragon/remark](https://github.com/sapper-dragon/remark) (Markdown)
+
+This package is a grab bag of useful "plugins" for Sapper. These tools are all employed in a very specific and opinionated manner. The packages are all broken up into specific sub-packages, like so:
+
+ * [@sapper-dragon/postcss](https://github.com/sapper-dragon/postcss) (PostCSS/CSS)
+ * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVGO/SVG)
+ * [@sapper-dragon/remark](https://github.com/sapper-dragon/remark) (Remark/Markdown)
  <!-- * [LilyPond](http://lilypond.org/) (Sheet Music) -->
- * [JSON ... to come]
+ <!-- * [JSON ... to come] -->
 
-Currently this is an overly-bundled grab bag of useful tools alongside Sapper. These tools are all employed in a very specific and opinionated manner. This may change in the future with the option to specify which bundles to include and instuctions on how to create a less burdensome download weight. But since this is a development-only tool mostly for personal reuse on various projects, I've kept it pretty weighty. In any case, the goal is something consistent for reuse that I mostly don't have to think about, but just tweak every now and then.
-
-Another note, this lib *only* works with Svelte v3 and Sapper 0.26.0 and up.
-
-You've been warned. 🐉
+> NOTE: this lib *only* works with Svelte v3, Sapper 0.26.0+, and Rollup. _You've been warned_. 🐉
 
 ## Installation
 
@@ -51,13 +50,7 @@ You can place a `trimmings.config.js` file in the root of your project to set co
 
 ```js
 export default {
-	postcss: {
-		watchPath: 'src/trimmings/postcss', // path to watch *.postcss files:
-		filename: 'global', // name of file without extension
-		pathMatcher: /\.(postcss|css|scss)$/, // pattern for files to watch:
-		staticPath: 'static/css', // output path:
-		preImport: 'svelte-pre-imports', // filename without extension for pre-importing postcss vars and mixins
-	},
+	postcss: {/* ...see @sapper-dragon/postcss package... */},
 	svgo: {/* ...see @sapper-dragon/svgo package... */},
 	remark: {/* ...see @sapper-dragon/remark package... */},
 	// etc.
@@ -82,22 +75,6 @@ If you want this to actually trigger LiveReload, add it somewhere in your actual
 ```
 
 The file is just a hidden component with a id that changes to invalidate and refresh.
-
-## PostCSS
-
-This package also includes a PostCSS preprocessor, separate from the cli `trim`. To use it, import it in your `rollup.config.js` file, and add it as a preproccesor like so:
-
-```js
-import { preprocess } from '@sapper-dragon/trimmings'
-...
-svelte({
-	...
-	preprocess: preprocess(),
-	...
-}),
-```
-
-NOTE: this preprocessor expects to find a file at `./src/trimmings/postcss/svelte-pre-imports.postcss` (depending on your settings). Make sure it exists. DO NOT include actual compiled CSS in this preprended file. That will bundle CSS into every component, which you most likely won't want. (Maybe there's such a relevant use case?) This mostly allows you to prepend variables or mixins or other `*.postcss` files into every component processed.
 
 ## Q&A
 

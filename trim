@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require = require('esm')(module)
-module.exports = require('./src/cli.js')
+module.exports = require('./cli.js')
 
 // TODO: break this thing up under `@sapper-dragon/*` plugins or `@svelte-dragons/*`
 // pwa: https://github.com/lukeed/pwa/blob/master/packages/core/index.js#L22-L31

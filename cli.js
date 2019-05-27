@@ -2,7 +2,7 @@ import sade from 'sade'
 import { green, red, gray } from 'ansi-colors'
 import { loadConfig } from './config'
 const exec = require('util').promisify(require('child_process').exec)
-import * as pkg from '../package.json'
+import * as pkg from './package.json'
 import { setWatch } from './watcher'
 
 const prog = sade('trim').version(pkg.version)
@@ -24,7 +24,7 @@ prog
 			if (opts.postcss) {
 				console.log('~>', green('Watching Sapper trimming:'), 'postcss')
 				await exec(`mkdir -p ${config.postcss.watchPath}`)
-				setWatch('postcss', config, true)
+				setWatch('postcss', config)
 			}
 			if (opts.svgo) {
 				console.log('~>', green('Watching Sapper trimming:'), 'svgo')
