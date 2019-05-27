@@ -1,6 +1,6 @@
 {
   "name": "@sapper-dragon/trimmings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Decorate your Sapper project with some holiday spirit.",
   "license": "MIT",
   "author": "Robert Hall <langbert@gmail.com> (http://arxpoetica.com/)",
