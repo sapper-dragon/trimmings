@@ -3,6 +3,7 @@ import { green, red, gray } from 'ansi-colors'
 import { loadConfig } from './config'
 const exec = require('util').promisify(require('child_process').exec)
 import * as pkg from './package.json'
+import { refresh } from './tools'
 import { setWatch } from './watcher'
 
 const prog = sade('trim').version(pkg.version)
@@ -23,6 +24,7 @@ prog
 		// console.log(config)
 
 		try {
+			await refresh()
 			// here we:
 			for (let name in opts) {
 				// 1. check if the named option is set (i.e., postcss, svgo, etc.)

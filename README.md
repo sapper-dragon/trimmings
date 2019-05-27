@@ -1,6 +1,6 @@
 # sapper-trimmings
 
-Decorate your [Sapper](https://sapper.svelte.dev/) project with some (semi-optional) holiday spirit.
+Decorate your [Sapper](https://sapper.svelte.dev/) project with some (optional) holiday spirit.
 
 
 This package is a grab bag of useful "plugins" for Sapper. These tools are all employed in a very specific and opinionated manner. The packages are all broken up into specific sub-packages, like so:
@@ -32,9 +32,9 @@ trim watch [options]
 
 ```
 -p, --postcss     Use PostCSS for preprocessing  (default false)
--s, --svg         Use SVG compiler  (default false)
--m, --markdown    Use markdown compiler  (default false)
--l, --lilypond    Use LilyPond compiler  (default false)
+-s, --svgo        Use SVGO compiler for svgs  (default false)
+-r, --remark      Use Remark compiler for markdown  (default false)
+-l, --lilypond    Use LilyPond compiler for sheet music  (default false)
 ```
 
 ### package.json script
@@ -42,12 +42,12 @@ trim watch [options]
 I'm using an NPM/Yarn `package.json` script like so (including any desired options):
 
 ```json
-"watch": "trim watch --svg --postcss --markdown --lilypond"
+"watch": "trim watch --postcss --svgo --remark --lilypond"
 ```
 
 ### Config
 
-You can place a `trimmings.config.js` file in the root of your project to set configutations. Individual configurations can be found in each `@sapper-dragon/*` packages, but the basic format is like this:
+You can place a `trimmings.config.js` file in the root of your project to set configutations. Individual configurations can be found in each `@sapper-dragon/*` package, but the basic format is like so:
 
 ```js
 export default {
@@ -60,13 +60,13 @@ export default {
 
 ### LiveReload
 
-When using any of these tools, a file is generated for the use of triggering LiveReload if so desired. This file is generated everytime a change is made to any of the given files associated with the tools (*.css, *.svg, or *.md). The file is `./src/routes/_refresh.svelte`. You should add this to your `.gitignore` file:
+When using any of these tools, a file is generated for the use of triggering LiveReload. This file is generated on startup, as well as everytime a change is made to any of the given files associated with the tools (*.css, *.svg, or *.md). The file is `./src/routes/_refresh.svelte`. You should add this to your `.gitignore` file:
 
 ```
 /src/routes/_refresh.svelte
 ```
 
-If you want this to actually trigger LiveReload, add it somewhere in your actual layout. I'm doing the following in any `_layout.svelte` file:
+If you want this to actually trigger LiveReload, add it somewhere in your actual layout. I'm doing the following in `_layout.svelte`:
 
 ```html
 <Refresh/>
@@ -75,13 +75,13 @@ If you want this to actually trigger LiveReload, add it somewhere in your actual
 </script>
 ```
 
-The file is just a hidden component with a id that changes to invalidate and refresh.
+The file is just a hidden component with an id that changes to invalidate and refresh.
 
 ## Q&A
 
 **Q:** Why not `rollup-plugin-*`?
 
-**A:** Partly because I wanted tighter control, partly because Rollup isn't always easy to do wild and crazy things, and partly because this is just that, a grab bag of all sorts of reusable goods. I don't really expect anyone else to use this, but it's available for the taking if so desired.
+**A:** Partly because I wanted tighter control, partly because Rollup isn't always easy to do wild and crazy things, and partly because this is just that, a grab bag of all sorts of reusable goods. If this lib gets a lot of usage, and people can point out how `rollup-plugin-*` is better, I'm all ears. Admittedly, this is a little bit reckless and built from scratch wizardry. Also, for the PostCSS preprocessor, I am using the `rollup-plugin-svelte`. 🌮
 
 **Q:** This isn't working exactly as specified.
 
