@@ -1,30 +1,30 @@
 module.exports.config = {
 
 	postcss: {
-		import: 'src/trimmings/postcss',
+		input: 'src/trimmings/postcss',
 		filename: 'global',
 		filter: /\.(postcss|css|scss)$/,
-		exportStatic: 'static/css',
+		outputStatic: 'static/css',
 		preImport: 'svelte-pre-imports',
 	},
 
 	svgo: {
-		import: 'src/trimmings/svgo',
+		input: 'src/trimmings/svgo',
 		filter: /\.(svg)$/,
-		exportSvelte: 'src/routes/_svg',
-		exportStatic: 'static/svg',
+		outputSvelte: 'src/routes/_svg',
+		outputStatic: 'static/svg',
 	},
 
 	remark: {
-		import: 'src/trimmings/remark',
+		input: 'src/trimmings/remark',
 		filter: /\.md$/,
-		exportSvelte: 'src/routes/_markdown',
+		outputSvelte: 'src/routes/_markdown',
 	},
 
 	lilypond: {
-		import: 'src/trimmings/lilypond',
+		input: 'src/trimmings/lilypond',
 		filter: /\.ly$/,
-		exportStatic: 'static/music',
+		outputStatic: 'static/music',
 	},
 
 }

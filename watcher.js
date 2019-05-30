@@ -7,7 +7,7 @@ export const setWatch = async(name, config, internal) => {
 	const { change, remove } = await require(`../${name}`)
 
 	const watch = new CheapWatch({
-		dir: path.join(process.cwd(), `/${config[name].import}`),
+		dir: path.join(process.cwd(), `/${config[name].input}`),
 		filter: ({ path, stats }) => {
 			const match =
 				path.indexOf('.git') !== 0 &&

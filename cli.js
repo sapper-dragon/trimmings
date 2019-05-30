@@ -7,7 +7,7 @@ import { refresh } from './tools'
 import { setWatch } from './watcher'
 
 const prog = sade('trim').version(pkg.version)
-const potentialSettings = ['import', 'exportSvelte', 'exportStatic']
+const potentialSettings = ['input', 'outputSvelte', 'outputStatic']
 
 prog
 	.command('watch')
