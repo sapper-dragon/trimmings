@@ -5,11 +5,11 @@ Decorate your [Sapper](https://sapper.svelte.dev/) project with some (optional) 
 
 This package is a grab bag of useful "plugins" for Sapper. These tools are all employed in a very specific and opinionated manner. The packages are all broken up into specific sub-packages, like so:
 
+ * [@sapper-dragon/json](https://github.com/sapper-dragon/json) (*.js -> *.json generator)
+ * [@sapper-dragon/lilypond](https://github.com/sapper-dragon/lilypond) (LilyPond/Sheet Music)
  * [@sapper-dragon/postcss](https://github.com/sapper-dragon/postcss) (PostCSS/CSS)
- * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVGO/SVG)
  * [@sapper-dragon/remark](https://github.com/sapper-dragon/remark) (Remark/Markdown)
- * [@sapper-dragon/lilypond](http://lilypond.org/) (LilyPond/Sheet Music)
- <!-- * [JSON ... to come] -->
+ * [@sapper-dragon/svgo](https://github.com/sapper-dragon/svgo) (SVGO/SVG)
 
 > NOTE: this lib *only* works with Svelte v3, Sapper 0.26.0+, and Rollup. _You've been warned_. 🐉
 

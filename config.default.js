@@ -1,5 +1,17 @@
 module.exports.config = {
 
+	json: {
+		input: 'src/trimmings/json',
+		filter: /\.js$/,
+		outputStatic: 'static/json',
+	},
+
+	lilypond: {
+		input: 'src/trimmings/lilypond',
+		filter: /\.ly$/,
+		outputStatic: 'static/music',
+	},
+
 	postcss: {
 		input: 'src/trimmings/postcss',
 		filename: 'global',
@@ -8,23 +20,17 @@ module.exports.config = {
 		preImport: 'svelte-pre-imports',
 	},
 
-	svgo: {
-		input: 'src/trimmings/svgo',
-		filter: /\.(svg)$/,
-		outputSvelte: 'src/routes/_svg',
-		outputStatic: 'static/svg',
-	},
-
 	remark: {
 		input: 'src/trimmings/remark',
 		filter: /\.md$/,
 		outputSvelte: 'src/routes/_markdown',
 	},
 
-	lilypond: {
-		input: 'src/trimmings/lilypond',
-		filter: /\.ly$/,
-		outputStatic: 'static/music',
+	svgo: {
+		input: 'src/trimmings/svgo',
+		filter: /\.(svg)$/,
+		outputSvelte: 'src/routes/_svg',
+		outputStatic: 'static/svg',
 	},
 
 }

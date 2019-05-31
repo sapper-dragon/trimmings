@@ -16,6 +16,7 @@ prog
 	.option('-s, --svgo', 'Use SVGO compiler for svgs', false)
 	.option('-r, --remark', 'Use Remark compiler for markdown', false)
 	.option('-l, --lilypond', 'Use LilyPond compiler for sheet music', false)
+	.option('-j, --json', 'Export generated *.json files from *.js files', false)
 	.action(async(opts) => {
 
 		console.log()
