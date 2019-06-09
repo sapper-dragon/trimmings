@@ -69,9 +69,18 @@ When using any of these tools, a file is generated for the use of triggering Liv
 If you want this to actually trigger LiveReload, add it somewhere in your actual layout. I'm doing the following in `_layout.svelte`:
 
 ```html
-<Refresh/>
+<!-- DEV ONLY -->
+{#if Refresh}
+	<svelte:component this={Refresh}/>
+{/if}
 <script>
-	import Refresh from './_refresh.svelte'
+	import { onMount } from 'svelte'
+	let Refresh = false
+	onMount(async() => {
+		if (process.env.NODE_ENV === 'development') {
+			Refresh = (await import('./_refresh.svelte')).default
+		}
+	})
 </script>
 ```
 

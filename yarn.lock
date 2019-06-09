@@ -12,11 +12,6 @@ cheap-watch@1.0.2:
   resolved "https://registry.yarnpkg.com/cheap-watch/-/cheap-watch-1.0.2.tgz#bfa648aea6bcd15e9fe4dce4ac760ab81cd0133c"
   integrity sha512-jp82t+kZAW+ZVnuYuHZEGZqDaUg28uAyOhC915BcKBSYL55fpTyuJ56cYYXZG0JkCPQT80MjRD6q2KqebaPwCw==
 
-dayjs@1.8.14:
-  version "1.8.14"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.14.tgz#43e4f62830c2c3342c3fcd25934dc9162dbe6f38"
-  integrity sha512-AVhDmRTe541iWirnoeFSSDDGvCT6HWaNQ4z2WmmzXMGZj6ph6ydao2teKq/eUtR43GPJXlYFD+C/SotG1P9wUQ==
-
 esm@3.2.25:
   version "3.2.25"
   resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"

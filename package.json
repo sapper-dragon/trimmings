@@ -36,7 +36,6 @@
   "dependencies": {
     "ansi-colors": "3.2.4",
     "cheap-watch": "1.0.2",
-    "dayjs": "1.8.14",
     "esm": "3.2.25",
     "sade": "1.4.2"
   },
