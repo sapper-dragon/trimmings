@@ -34,10 +34,10 @@
     "trim": "./trim"
   },
   "dependencies": {
-    "ansi-colors": "3.2.4",
+    "ansi-colors": "4.1.1",
     "cheap-watch": "1.0.2",
     "esm": "3.2.25",
-    "sade": "1.4.2"
+    "sade": "1.6.1"
   },
   "devDependencies": {}
 }
