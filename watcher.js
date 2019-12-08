@@ -2,7 +2,7 @@ import path from 'path'
 import CheapWatch from 'cheap-watch'
 import { yellow, red } from 'ansi-colors'
 
-export const setWatch = async(name, config, internal) => {
+export const setWatch = async(name, config) => {
 
 	const { change, remove } = await require(`../${name}`)
 
@@ -25,7 +25,8 @@ export const setWatch = async(name, config, internal) => {
 		if (stats.isFile()) {
 			console.log('~>', yellow(isNew ? 'Adding' : 'Changing'), './' + path)
 			if (change) {
-				change({ config, filepath: path, stats, isNew })
+				console.log(stats)
+				change({ config, filepath: path, isNew })
 			}
 		}
 	})
@@ -34,7 +35,7 @@ export const setWatch = async(name, config, internal) => {
 		if (stats.isFile()) {
 			console.log('~>', red('Deleting'), './' + path)
 			if (remove) {
-				remove({ config, filepath: path, stats })
+				remove({ config, filepath: path })
 			}
 		}
 	})
