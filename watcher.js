@@ -25,7 +25,6 @@ export const setWatch = async(name, config) => {
 		if (stats.isFile()) {
 			console.log('~>', yellow(isNew ? 'Adding' : 'Changing'), './' + path)
 			if (change) {
-				console.log(stats)
 				change({ config, filepath: path, isNew })
 			}
 		}

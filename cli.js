@@ -58,7 +58,6 @@ for (let command of ['watch', 'build']) {
 
 						const { change } = await require(`../${name}`)
 						if (name === 'postcss') {
-							// console.log('~>', yellow('Building'), './' + path)
 							change({ config })
 						} else {
 							console.log('\n~>', yellow(
